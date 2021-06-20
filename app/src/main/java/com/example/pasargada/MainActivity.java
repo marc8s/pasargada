@@ -18,22 +18,22 @@ public class MainActivity extends IntroActivity {
         setButtonNextVisible(false);
 
         addSlide(new FragmentSlide.Builder()
-                .background(R.color.purple_200)
+                .background(R.color.background_sliders)
                 .fragment(R.layout.intro_1)
                 .build()
         );
         addSlide(new FragmentSlide.Builder()
-                .background(R.color.purple_200)
+                .background(R.color.background_sliders)
                 .fragment(R.layout.intro_2)
                 .build()
         );
         addSlide(new FragmentSlide.Builder()
-                .background(R.color.purple_200)
+                .background(R.color.background_sliders)
                 .fragment(R.layout.intro_3)
                 .build()
         );
         addSlide(new FragmentSlide.Builder()
-                .background(R.color.purple_200)
+                .background(R.color.background_sliders)
                 .fragment(R.layout.intro_4)
                 .build()
         );
