@@ -13,7 +13,7 @@ public class MainActivity extends IntroActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //remove butões back e next dos slides
+        //remove botões back e next dos slides
         setButtonBackVisible(false);
         setButtonNextVisible(false);
 
@@ -30,11 +30,6 @@ public class MainActivity extends IntroActivity {
         addSlide(new FragmentSlide.Builder()
                 .background(R.color.background_sliders)
                 .fragment(R.layout.intro_3)
-                .build()
-        );
-        addSlide(new FragmentSlide.Builder()
-                .background(R.color.background_sliders)
-                .fragment(R.layout.intro_4)
                 .build()
         );
     }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "482170411072",
+    "project_id": "pasargada-140d9",
+    "storage_bucket": "pasargada-140d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:482170411072:android:32d490fb7b893fd48d27a5",
+        "android_client_info": {
+          "package_name": "com.example.pasargada"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "482170411072-1fkosmr782stttl937lhga5cvla89k9e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMaMVIdnQ3ZBmvEVgI7GXoSYlmqMj0JBA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "482170411072-1fkosmr782stttl937lhga5cvla89k9e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
