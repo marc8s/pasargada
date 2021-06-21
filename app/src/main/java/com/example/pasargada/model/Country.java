@@ -1,4 +1,4 @@
-package com.example.pasargada;
+package com.example.pasargada.model;
 
 public class Country {
     private String name;
