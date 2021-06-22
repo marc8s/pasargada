@@ -51,7 +51,7 @@ public class AdapterCountry extends RecyclerView.Adapter<AdapterCountry.MyViewHo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mCountries.size();
     }
 
     //2. classe interna para poder exibir cada um dos dados dentro de um elemento de lista
