@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.pasargada.R;
 import com.example.pasargada.adapter.AdapterCountry;
@@ -25,17 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends IntroActivity {
-
     private Country mCountry;
-
-    //RECYCLERVIEW E ADAPTER
-    private RecyclerView mRecyclerViewCountries;
-    private AdapterCountry mAdapterCountry;
-    private List<Country> mCountries = new ArrayList<>();
-    //PREENCHER LISTA
-    private DatabaseReference mReferenceFirebase = ConfigFirebase.getFirebaseDatabase();
-    private DatabaseReference mCountryRef;
-    private ValueEventListener mValueEventListenerCountries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +36,7 @@ public class MainActivity extends IntroActivity {
         //remove botões back e next dos slides
         setButtonBackVisible(false);
         setButtonNextVisible(false);
+
         //slides apresentados ao abrir a app
         addSlide(new FragmentSlide.Builder()
                 .background(R.color.background_sliders)
@@ -59,6 +53,7 @@ public class MainActivity extends IntroActivity {
                 .fragment(R.layout.intro_3)
                 .build()
         );
+
     }
 
     //Chamar esse método quando quiser adicionar um pais no firebase
@@ -71,47 +66,8 @@ public class MainActivity extends IntroActivity {
         mCountry.save();
     }
 
-   public void fillRecyclerView(){
-        mRecyclerViewCountries = findViewById(R.id.recyclerViewCountries);
-        //CONFIGURANDO O ADAPTER
-        //configurar adapter para receber e formatar os dados para o recyclerview
-        mAdapterCountry = new AdapterCountry(mCountries, this);
-        //CONFIGURANDO O RECYCLER
-        //instancia o gerenciador do layout
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        mRecyclerViewCountries.setLayoutManager(layoutManager);
-        mRecyclerViewCountries.setHasFixedSize(true);
-        mRecyclerViewCountries.setAdapter(mAdapterCountry);
+    public void btOpenHome(View view){
+        startActivity(new Intent(this, HomeActivity.class));
     }
 
-
-     public void loadCountries(){
-        mCountryRef = mReferenceFirebase.child("countries");
-        mValueEventListenerCountries = mCountryRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                mCountries.clear();
-                for (DataSnapshot dados: snapshot.getChildren()){
-                    Log.i("dados", "retorno: " + dados.toString());
-                    Country country = dados.getValue(Country.class);
-                    Log.i("dados", "nomes: " + country.getName());
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-            }
-        });
-     }
-
-
-    @Override
-    protected void onStart(){
-        super.onStart();
-        //addCountryFirebase();
-        //fillRecyclerView();
-        loadCountries();
-
-    }
 }

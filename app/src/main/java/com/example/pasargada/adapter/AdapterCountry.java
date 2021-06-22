@@ -2,6 +2,7 @@ package com.example.pasargada.adapter;
 
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +30,8 @@ public class AdapterCountry extends RecyclerView.Adapter<AdapterCountry.MyViewHo
     public AdapterCountry(List<Country> countries, Context context){
         this.mCountries = countries;
         this.mContext = context;
+        //int tamanho = getItemCount();
+        //Log.i("tamanho lista", "adapter: " +tamanho);
     }
 
 
