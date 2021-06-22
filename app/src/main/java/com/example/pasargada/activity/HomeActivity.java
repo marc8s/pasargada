@@ -40,9 +40,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
 
-        int tamanho = mCountries.size();
+        /*int tamanho = mCountries.size();
         Log.i("tamanho lista", "on main");
-        logLista();
+        logLista();*/
         mRecyclerViewCountries = findViewById(R.id.recyclerViewCountries);
         //CONFIGURANDO O ADAPTER
         //configurar adapter para receber e formatar os dados para o recyclerview
@@ -50,7 +50,6 @@ public class HomeActivity extends AppCompatActivity {
         //CONFIGURANDO O RECYCLER
         //instancia o gerenciador do layout
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        //aqui erro
         mRecyclerViewCountries.setLayoutManager(layoutManager);
         mRecyclerViewCountries.setHasFixedSize(true);
         mRecyclerViewCountries.setAdapter(mAdapterCountry);
@@ -69,8 +68,8 @@ public class HomeActivity extends AppCompatActivity {
                     mCountries.add(country);
                 }
                 mAdapterCountry.notifyDataSetChanged();
-                Log.i("tamanho lista", "on load");
-                logLista();
+                /*Log.i("tamanho lista", "on load");
+                logLista();*/
             }
 
             @Override

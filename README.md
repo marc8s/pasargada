@@ -6,5 +6,6 @@ one special land where life can be better.
 # Progress
 1. Presentation slides using a material-intro library from https://github.com/heinrichreimer/material-intro (done)
 2. Firebase Configuration (done)
-3. List of available countries (to do)
+3. List of available countries (done)
+4. List of documents (to do)
 
