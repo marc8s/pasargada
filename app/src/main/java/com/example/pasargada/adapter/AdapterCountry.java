@@ -24,7 +24,7 @@ import java.util.List;
 //4. public class AdapterCountry extends RecyclerView.Adapter<AdapterCountry.MyViewHolder>
 //5. implement methods
 public class AdapterCountry extends RecyclerView.Adapter<AdapterCountry.MyViewHolder> {
-
+    //7.
     List<Country> mCountries;
     Context mContext;
     public AdapterCountry(List<Country> countries, Context context){
@@ -45,13 +45,13 @@ public class AdapterCountry extends RecyclerView.Adapter<AdapterCountry.MyViewHo
                 .inflate(R.layout.adapter_country, parent, false);
         return new MyViewHolder(itemList);
     }
-    //exibição dos itens
+    //8. exibição dos itens
     @Override
     public void onBindViewHolder(@NonNull @NotNull AdapterCountry.MyViewHolder holder, int position) {
         Country country = mCountries.get(position);
         holder.name.setText(country.getName());
     }
-
+    //9.
     @Override
     public int getItemCount() {
         return mCountries.size();
