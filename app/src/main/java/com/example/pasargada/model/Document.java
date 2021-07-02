@@ -5,7 +5,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
 public class Document {
-    private String name, id, description, steps;
+    private String name, id, description;
 
     public Document() {
     }
@@ -14,6 +14,7 @@ public class Document {
         DatabaseReference databaseReference = ConfigFirebase.getFirebaseDatabase();
         databaseReference.child("documents")
                 .child(this.id)
+                .push()
                 .setValue(this);
     }
 
@@ -42,11 +43,4 @@ public class Document {
         this.description = description;
     }
 
-    public String getSteps() {
-        return steps;
-    }
-
-    public void setSteps(String steps) {
-        this.steps = steps;
-    }
 }
